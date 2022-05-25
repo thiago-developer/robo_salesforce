@@ -58,11 +58,10 @@ class RoboSalesforce:
                                                                                         f"AND AnexoLegado__c = null "
                                                                                         f"Order By Id DESC")
         driver.find_element(By.XPATH, value='//*[@id="query_form"]/table/tbody/tr[3]/td[1]/input').click()
-        time.sleep(5)
+        time.sleep(7)
         id_institucional = self._filtra_id_objeto(driver.find_element(By.XPATH, '//*[@id="query_results"]/tbody/tr[2]/td[2]/a').get_property("href"))
         id_legado = self._filtra_id_objeto(driver.find_element(By.XPATH, '//*[@id="query_results"]/tbody/tr[2]/td[3]/a').get_property("href"))
-        print(f"Id institucional: {id_institucional}, \nId IU Conecta: {id_legado}")
-
+        print(f"Id institucional: {id_institucional} \nId IU Conecta: {id_legado}")
 
 
 robo = RoboSalesforce("objeto", "ambiente", "usuario", "senha")
