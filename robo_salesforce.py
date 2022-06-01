@@ -80,8 +80,8 @@ class RoboSalesforce:
         print("Iniciando robo...")
         driver = webdriver.Chrome(options=options, service=s)
         driver.get(f"https://login.salesforce.com/lightning/r/CombinedAttachment/{id_legado}/related/CombinedAttachments/view")
-        driver.find_element(By.XPATH, value='//*[@id="username"]').send_keys("987302014@iuconecta.com")
-        driver.find_element(By.XPATH, value='//*[@id="password"]').send_keys("Thi181907")
+        driver.find_element(By.XPATH, value='//*[@id="username"]').send_keys("usuario_ogr_pessoas")
+        driver.find_element(By.XPATH, value='//*[@id="password"]').send_keys("senha_pessoas")
         driver.find_element(By.XPATH, value='//*[@id="Login"]').click()
 
         time.sleep(15)
@@ -118,8 +118,8 @@ class RoboSalesforce:
         print("Iniciando robo...")
         driver = webdriver.Chrome(options=options, service=s)
         driver.get(f"https://login.salesforce.com/{id_objeto}")
-        driver.find_element(By.XPATH, value='//*[@id="username"]').send_keys("thiago.a.santos-gomes@institucionais.com.br")
-        driver.find_element(By.XPATH, value='//*[@id="password"]').send_keys("Thi12071995")
+        driver.find_element(By.XPATH, value='//*[@id="username"]').send_keys("usuario_juridico")
+        driver.find_element(By.XPATH, value='//*[@id="password"]').send_keys("senha_juiridico")
         driver.find_element(By.XPATH, value='//*[@id="Login"]').click()
         time.sleep(10)
         arquivos_diretorio = os.listdir(caminho_arquivos)
@@ -128,7 +128,7 @@ class RoboSalesforce:
         elemento = driver.find_element(By.XPATH, value=f'//*[@id="{codigo_input_file}"]')
 
         for i in range(len(arquivos_diretorio)):
-            if(len(arquivos_diretorio)) > 1:
+            if(len(arquivos_diretorio)) >= 1:
                 arquivo = arquivos_diretorio[i]
                 print(f"Arquivos {arquivo}")
                 elemento_salvo = elemento.send_keys(caminho_arquivos + arquivo)
@@ -140,6 +140,6 @@ class RoboSalesforce:
 
 
 
-robo = RoboSalesforce("WV_Retomada__c", "producao", "thiago.a.santos-gomes@institucionais.com.br", "Thi12071995", "C:\\Users\\Thiago\\Documents\\Projeto_Robo_Salesforce\\Robo_SalesForce\\chromedriver.exe")
+robo = RoboSalesforce("WV_Retomada__c", "producao", "usuario", "senha", "Caminho driver \\chromedriver.exe")
 robo.lista_ids_objeto()
 
