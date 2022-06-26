@@ -73,5 +73,5 @@ class AtualizaRegistroInstitucional:
         driver.close()
 
 
-atualiza_registro = AtualizaRegistroInstitucional("thiago.a.santos-gomes@institucionais.com.br", "Thi12071995", "Producao", "WV_Retomada__c")
+atualiza_registro = AtualizaRegistroInstitucional("usuario", "senha", "Producao", "WV_Retomada__c")
 atualiza_registro.lista_ids_objeto()
