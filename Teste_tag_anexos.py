@@ -25,8 +25,8 @@ class TesteTag:
         print("Iniciando robo...")
         driver = webdriver.Chrome(options=options, service=s)
         driver.get(f"https://login.salesforce.com/{self.id_objeto}")
-        driver.find_element(By.XPATH, value='//*[@id="username"]').send_keys("thiago.a.santos-gomes@institucionais.com.br")
-        driver.find_element(By.XPATH, value='//*[@id="password"]').send_keys("Thi12071995")
+        driver.find_element(By.XPATH, value='//*[@id="username"]').send_keys("usuario")
+        driver.find_element(By.XPATH, value='//*[@id="password"]').send_keys("senha")
         driver.find_element(By.XPATH, value='//*[@id="Login"]').click()
         time.sleep(10)
 
